@@ -1,0 +1,13 @@
+{
+  "name": "simple-chat",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/lucas-lm/simple-chat.git",
+  "author": "Lucas Miranda <lucas-m@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
+}

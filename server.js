@@ -14,4 +14,20 @@ app.engine('html', ejs.renderFile)
 app.set('view engine', 'html')
 
 app.use('/', (req, res) => res.render('index.html'))
+
+const messages = []
+const LIMIT = 2000
+
+const addMessage = (s) => (msg) => {
+  messages.push(msg)
+  if (messages.length > 3) messages.shift()
+  s.broadcast.emit('receivedMessage', msg)
+}
+
+io.on('connection', (s) => {
+  console.log(`Socket conectado ${s.id}`)
+  s.emit('previous', messages)
+  s.on('sendMessage', addMessage(s))
+})
+
 server.listen(process.env.PORT || 3000)

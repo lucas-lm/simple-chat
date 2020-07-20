@@ -6,7 +6,7 @@
 
 body {
   background-color: #666;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   color: white;
 }
 
@@ -31,8 +31,6 @@ div#messages {
   border-radius: 8px;
   box-shadow: 1px 2px 5px 1px #33333333;
   overflow-y: auto;
-
-  /* border: 1px solid black; */
 }
 
 div#input {
@@ -48,14 +46,15 @@ div#input {
 
 div#input input {
   color: white;
+  font-size: 1.2em;
+  line-height: 1.2;
   flex-grow: 1;
-  padding: 4px;
+  padding: 8px;
   background-color: transparent;
   box-shadow: none;
   outline: none;
   height: 32px;
   border: none;
-  /* border: 1px solid black; */
 }
 
 div#input button {
@@ -76,11 +75,14 @@ div#input button:hover {
 
 p {
   background-color: #00000030;
+  font-size: 1.2em;
   margin: 8px 0;
   padding: 8px;
   border-radius: 4px;
   width: auto;
   box-shadow: 1px 2px 5px 1px #33333333;
+  max-width: 90%;
+  word-wrap: break-word;
 }
 
 p.me {

@@ -5,9 +5,9 @@
   var board = document.querySelector('#messages')
 
   function renderMessage(msg, from) {
-    var itsme = from === socket.id
+    var itsme = from.id === socket.id
     var c = itsme ? '<p class="me">' : '<p>'
-    var name = itsme ? 'Eu' : from
+    var name = itsme ? 'Eu' : from.name
     board.innerHTML += c + '<strong>' + name + '</strong>: ' + msg + '</p>'
   }
 
@@ -16,7 +16,6 @@
   })
 
   socket.on('previous', function (messages) {
-    console.log(messages)
     for (var m of messages) {
       renderMessage(m.message, m.from)
     }
@@ -25,8 +24,8 @@
   chat.addEventListener('submit', (event) => {
     event.preventDefault()
     if (message.value) {
-      renderMessage(message.value, socket.id)
-      socket.emit('sendMessage', { message: message.value, from: socket.id })
+      renderMessage(message.value, { id: socket.id, name: 'Eu' })
+      socket.emit('sendMessage', { message: message.value })
       message.value = ''
     }
   })

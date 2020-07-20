@@ -15,18 +15,24 @@ app.set('view engine', 'html')
 
 app.use('/', (req, res) => res.render('index.html'))
 
+const nicknames = ['Pitolomeu', 'Discordia', 'Sabruna', 'Merchola', 'Brupou']
+
+const users = {}
+
+const randInt = (n) => Math.round(n * Math.random())
+
 const messages = []
 const LIMIT = 2000
 
 const addMessage = (s) => (msg) => {
+  msg.from = { id: s.id, name: users[s.id] }
   messages.push(msg)
   if (messages.length > LIMIT) messages.shift()
   s.broadcast.emit('receivedMessage', msg)
-  console.log(messages)
 }
 
 io.on('connection', (s) => {
-  console.log(`Socket conectado ${s.id}`)
+  users[s.id] = nicknames[randInt(4)]
   s.emit('previous', messages)
   s.on('sendMessage', addMessage(s))
 })

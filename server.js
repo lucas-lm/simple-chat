@@ -20,7 +20,7 @@ const LIMIT = 2000
 
 const addMessage = (s) => (msg) => {
   messages.push(msg)
-  if (messages.length > 3) messages.shift()
+  if (messages.length > LIMIT) messages.shift()
   s.broadcast.emit('receivedMessage', msg)
   console.log(messages)
 }

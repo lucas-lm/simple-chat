@@ -19,6 +19,7 @@
     event.preventDefault()
     if (message.value) {
       renderMessage(message.value)
+      message.value = ''
       socket.emit('sendMessage', message.value)
     }
   })

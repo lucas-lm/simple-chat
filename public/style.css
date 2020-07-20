@@ -10,11 +10,16 @@ body {
   color: white;
 }
 
+h1 {
+  font-weight: 400;
+  text-align: center;
+}
+
 form#chat {
   width: 90%;
   max-width: 600px;
-
   margin: 0 auto;
+  padding-top: 16px;
   height: 100vh;
 }
 
@@ -31,10 +36,11 @@ div#messages {
   border-radius: 8px;
   box-shadow: 1px 2px 5px 1px #33333333;
   overflow-y: auto;
+  border: 1px solid black;
 }
 
 div#input {
-  background: #00000030;
+  background-color: #22222222;
   border-radius: 32px;
   padding: 3px;
   padding-left: 8px;

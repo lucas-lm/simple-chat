@@ -6,15 +6,18 @@
     <link rel="stylesheet" href="style.css" />
     <title>Simple Chat</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <form id="chat">
       <h1>Simple Chat</h1>
-      <input type="text" name="username" placeholder="Digite seu usuário" />
       <div id="messages"></div>
       <div id="input">
         <input type="text" name="message" placeholder="Digite sua mensagem" />
-        <button type="submit">Enviar</button>
+        <button type="submit"><i class="material-icons">send</i></button>
       </div>
     </form>
     <script src="script.js"></script>

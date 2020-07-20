@@ -1,5 +1,5 @@
 ;(function () {
-  var socket = io('http://localhost:3000')
+  var socket = io('http://192.168.0.2:3000')
   const chat = document.querySelector('#chat')
   const message = document.querySelector('input[name=message]')
   const board = document.querySelector('#messages')

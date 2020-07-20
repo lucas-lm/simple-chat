@@ -30,6 +30,7 @@ div#messages {
   background-color: #bcdbcd10;
   border-radius: 8px;
   box-shadow: 1px 2px 5px 1px #33333333;
+  overflow-y: auto;
 
   /* border: 1px solid black; */
 }
@@ -37,7 +38,8 @@ div#messages {
 div#input {
   background: #00000030;
   border-radius: 32px;
-  padding: 8px;
+  padding: 3px;
+  padding-left: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,7 +47,6 @@ div#input {
 }
 
 div#input input {
-  display: inline-block;
   color: white;
   flex-grow: 1;
   padding: 4px;
@@ -58,14 +59,19 @@ div#input input {
 }
 
 div#input button {
-  display: inline-block;
   background-color: transparent;
-  width: 32px;
-  height: 32px;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  /* border: 1px solid black; */
+}
+
+div#input button:hover {
+  background-color: #ffffff10;
 }
 
 p {

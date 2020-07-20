@@ -22,6 +22,7 @@ const addMessage = (s) => (msg) => {
   messages.push(msg)
   if (messages.length > 3) messages.shift()
   s.broadcast.emit('receivedMessage', msg)
+  console.log(messages)
 }
 
 io.on('connection', (s) => {
